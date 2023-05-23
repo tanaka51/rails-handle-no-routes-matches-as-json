@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  match '*not_found' => 'errors#not_found', via: %i[get post]
 end

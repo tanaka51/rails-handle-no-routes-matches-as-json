@@ -6,6 +6,7 @@ class NotFoundTest < ActionDispatch::IntegrationTest
 
     assert_response :not_found
     json = JSON.parse(response.body)
-    assert_equal json, { 'message': 'not found' }
+    expected = { 'message' => 'no such path: foo' }
+    assert_equal expected, json
   end
 end
